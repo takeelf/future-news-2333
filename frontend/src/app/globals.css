@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Times New Roman', serif;
+}
+
+body {
+  color: #000;
+  background: #f5f5dc;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 신문 스타일 변수 */
+:root {
+  --primary-color: #000;
+  --secondary-color: #333;
+  --border-color: #ccc;
+  --background-color: #f5f5dc;
+  --header-bg: #222;
+}
+
+/* 신문 레이아웃 스타일 */
+.newspaper-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  min-height: 100vh;
+}
+
+.newspaper-header {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 3px solid #000;
+}
+
+.newspaper-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'Times New Roman', serif;
+}
+
+.newspaper-date {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.newspaper-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
+}
+
+.main-article {
+  grid-column: 1 / -1;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.article {
+  border-right: 1px solid #ddd;
+  padding-right: 20px;
+}
+
+.article:last-child {
+  border-right: none;
+}
+
+.article-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  border-bottom: 1px solid #000;
+  padding-bottom: 5px;
+}
+
+.main-article .article-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.article-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.main-article .article-image {
+  height: 300px;
+  margin: 0 auto 20px;
+  display: block;
+  max-width: 600px;
+}
+
+.article-content {
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.6;
+  column-count: 1;
+}
+
+.main-article .article-content {
+  column-count: 3;
+  column-gap: 30px;
+  font-size: 1.1rem;
+}
+
+.article-date {
+  font-style: italic;
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .newspaper-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .main-article .article-content {
+    column-count: 1;
+  }
+  
+  .newspaper-title {
+    font-size: 2rem;
+  }
+  
+  .article {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+}
+
+/* 로딩 스타일 */
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+}
+
+/* 오류 스타일 */
+.error {
+  text-align: center;
+  padding: 50px;
+  color: #d32f2f;
+  font-size: 1.2rem;
+}
